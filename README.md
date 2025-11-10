@@ -14,30 +14,29 @@
 3. **Run the Analysis**
     Open `main_analysis.ipynb` in Google Colab or a local Jupyter environment.  
     Run all cells from top to bottom. The notebook loads the dataset and generates all figures/tables.
-
 ## Data Card
 
-| Variable        | Source         | Type    | Frequency | Missing % | Notes / Leakage Risk              |
-|-----------------|----------------|---------|-----------|-----------|-----------------------------------|
-| USDINR          | Yahoo Finance  | float64 | Daily     | 0%        | Used to create target              |
-| VIX             | Yahoo Finance  | float64 | Daily     | 0%        | No leakage                         |
-| OIL_WTI         | Yahoo Finance  | float64 | Daily     | 0%        | No leakage                         |
-| SP500           | Yahoo Finance  | float64 | Daily     | 0%        | No leakage                         |
-| US_10Y_YIELD    | FRED           | float64 | Daily     | 0%        | ffill used for holidays            |
-| US_CPI          | FRED           | float64 | Monthly   | 0%        | Forward-filled to daily            |
-| RV_d            | Self-Calculated| float64 | Daily     | 0%        | Lagged; no leakage                 |
-| …               | …              | …       | …         | …         | …                                  |
+| Variable        | Source              | Type    | Frequency                       | Missing % | Notes / Leakage Risk              |
+|-----------------|---------------------|---------|----------------------------------|-----------|-----------------------------------|
+| CPI             | FRED (guess)        | float64 | Monthly (likely ffilled to daily)| 0.00      | Forward-filled daily.             |
+| OIL_WTI         | Yahoo Finance (guess)| float64 | Daily                           | 0.00      | No leakage.                       |
+| RV_d            | Self-Calculated (guess) | float64 | Daily                         | 0.00      | Lagged, no leakage risk.          |
+| SP500           | Yahoo Finance (guess) | float64 | Daily                         | 0.00      | No leakage.                       |
+| US_10Y_YIELD    | FRED (guess)        | float64 | Daily                           | 0.00      | ffill used for holidays.          |
+| USDINR          | Yahoo Finance (guess)| float64 | Daily                           | 0.00      | Used to create target.            |
+| VIX             | Yahoo Finance (guess)| float64 | Daily                           | 0.00      | No leakage.                       |
 
 
 ---
 
 ## Data Split
 
-| Split       | Date Range             | % of Data     | Notes                                 |
-|-------------|------------------------|---------------|----------------------------------------|
-| Train       | 2003-XX-XX → YYYY-XX-XX| 80%           | Chronological; no look-ahead           |
-| Validation  | inside training window | 15% of train  | Used for early stopping                |
-| Test        | YYYY-XX-XX → YYYY-XX-XX| 20%           | Strictly future unseen data            |
+| Split       | Date Range                 | Rows | % of Data     | Notes                              |
+|-------------|----------------------------|------|---------------|------------------------------------|
+| Train       | 2007-09-17 → ~2023-??-??   | 3765 | 80%           | Chronological; no leakage          |
+| Validation  | inside Train               | ~565 | 15% of Train  | Used for early stopping            |
+| Test        | ~2023-??-?? → 2025-10-01   | 942  | 20%           | Strictly future unseen data        |
+
 
 
 
