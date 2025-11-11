@@ -11,15 +11,15 @@ The project implements a deep learning approach to forecast the **21-day annuali
 To fully reproduce the empirical findings, figures, and tables presented in the accompanying project report, follow these steps:
 
 1. **Clone the Repository**
-    ```bash
+   
     git clone [https://github.com/jayarammovva9/Forecasting-Exchange-Rate-Volatility.git](https://github.com/jayarammovva9/Forecasting-Exchange-Rate-Volatility.git)
     cd Forecasting-Exchange-Rate-Volatility
-    ```
+
 
 2. **Set Up the Environment**
-    ```bash
+
     pip install -r requirements.txt
-    ```
+
 
 3. **Run the Analysis**
     Open `main_analysis.ipynb` in Google Colab or a local Jupyter environment.  
