@@ -1,39 +1,21 @@
-## How to Reproduce Results
+## File Structure
 
-1. **Clone the Repository**
- 
-   git clone https://github.com/jayarammovva9/Forecasting-Exchange-Rate-Volatility.git
-   cd Forecasting-Exchange-Rate-Volatility
+•⁠  ⁠⁠ main_analysis.ipynb ⁠: The main Colab notebook containing all data loading, preprocessing, model training, and evaluation.
+•⁠  ⁠⁠ final_predictors_2003_onwards.csv ⁠: The final, cleaned dataset used in the analysis.
+•⁠  ⁠⁠ requirements.txt ⁠: A list of all Python packages required to run the code.
 
-2. **Setup the Environment**
+## How to Reproduce These Results
 
-pip install -r requirements.txt
+1.  *Clone the Repository:*
+    ⁠ bash
+    git clone [https://github.com/](https://github.com/)[YourUsername]/[YourRepoName].git
+     ⁠
 
+2.  *Set Up the Environment:*
+    ⁠ bash
+    cd [YourRepoName]
+    pip install -r requirements.txt
+     ⁠
 
-3. **Run the Analysis**
-Open main_analysis.ipynb in Google Colab or a local Jupyter environment.
-Run all cells from top to bottom.
-The notebook loads the dataset and generates all figures/tables.
-
-##  Data Card
-
-| Variable        | Source                   | Type    | Frequency                       | Missing % | Notes / Leakage Risk        |
-|-----------------|--------------------------|---------|----------------------------------|-----------|------------------------------|
-| CPI             | FRED *(guess)*           | float64 | Monthly → forward-filled daily  | 0.00      | Forward-filled daily         |
-| OIL_WTI         | Yahoo Finance *(guess)*  | float64 | Daily                           | 0.00      | No leakage                   |
-| RV_d            | Self-Calculated *(guess)*| float64 | Daily                           | 0.00      | Lagged; no leakage risk      |
-| SP500           | Yahoo Finance *(guess)*  | float64 | Daily                           | 0.00      | No leakage                   |
-| US_10Y_YIELD    | FRED *(guess)*           | float64 | Daily                           | 0.00      | Forward-filled for holidays  |
-| USDINR          | Yahoo Finance *(guess)*  | float64 | Daily                           | 0.00      | Used to create target        |
-| VIX             | Yahoo Finance *(guess)*  | float64 | Daily                           | 0.00      | No leakage                   |
-
-
----
-
-##  Data Split
-
-| Split       | Date Range                | Rows | % of Data | Notes                           |
-|-------------|---------------------------|------|-----------|---------------------------------|
-| Train       | 2007-09-17 → ~2023-??-??  | 3,765| 80%       | Chronological; no leakage       |
-| Validation  | Inside Train              | ~565 | 15%       | Used for early stopping         |
-| Test        | ~2023-??-?? → 2025-10-01  | 942  | 20%       | Strict future unseen data       |
+3.  *Run the Analysis:*
+    Open the ⁠ main_analysis.ipynb ⁠ notebook in Google Colab or a local Jupyter environment. Run all cells from top to bottom. The code will load the local CSV file and generate all tables and figures from the paper.
