@@ -15,7 +15,7 @@ Open main_analysis.ipynb in Google Colab or a local Jupyter environment.
 Run all cells from top to bottom.
 The notebook loads the dataset and generates all figures/tables.
 
-## 📄 Data Card
+##  Data Card
 
 | Variable        | Source                   | Type    | Frequency                       | Missing % | Notes / Leakage Risk        |
 |-----------------|--------------------------|---------|----------------------------------|-----------|------------------------------|
@@ -30,7 +30,7 @@ The notebook loads the dataset and generates all figures/tables.
 
 ---
 
-## 🪄 Data Split
+##  Data Split
 
 | Split       | Date Range                | Rows | % of Data | Notes                           |
 |-------------|---------------------------|------|-----------|---------------------------------|
